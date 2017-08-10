@@ -3,7 +3,7 @@ layout: post
 title: Signal statistics using bootstrap
 draft: true
 ---
-
+{% include mathjax.html %}
 As someone who runs many large-ish unsteady flow simulations, I am often confronted with the question of statistical convergence and simulation runtime. For spectral analysis of temporal signals we have simple and handy criteria for the sampling rate and the signal length:
 * What is the highest frequency I want to resolve? The Nyquist criterion is the way to go here, simply:
 $$a^2 + b^2 = c^2$$
