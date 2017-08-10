@@ -1,9 +1,15 @@
 ---
 layout: post
-title: You're up and running!
+title: Signal statistics using bootstrap
 draft: true
 ---
 
+As someone who runs many large-ish unsteady flow simulations, I am often confronted with the question of statistical convergence and simulation runtime. For spectral analysis of temporal signals we have simple and handy criteria for the sampling rate and the signal length:
+* What is the highest frequency I want to resolve? The Nyquist criterion is the way to go here, simply 
+*
+
+For a long time I've been toying with the ide
+So recently I came across 
 Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
