@@ -13,5 +13,12 @@ Apart from this, the question whether one's simulation runtime is sufficiently l
 
 So recently I dove into these things. 
 
+# Effective samples
+Most statistics classes focus on populations and samples from these populations, with the latter typically assumed to be statistically independent. If that were fulfilled we could skip a lot of headache. In general, though, it is not; especially not in case of highly resolved CFD simulations. These results constitute time series, which are typically self-correlated to some degree. Correlated data points can be thought of as worth less than uncorrelated data points in a statistical sense, as they hold less information about the process.
+
+Consider the standard error of the sample mean, $$\sigma / \sqrt{N}$$. Using a very high $$N$$, this converges to very low values rather quickly. A low SE 
+
+In time series, this is not necessarily the case - if you measure some kind of physical signal it often exhibits some kind of memory, in other words correlation.
+
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 
