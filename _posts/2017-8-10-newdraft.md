@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Signal statistics using bootstrap
+title: Accuracy of statistics from CFD simulations
 draft: true
 ---
 {% include mathjax.html %}
