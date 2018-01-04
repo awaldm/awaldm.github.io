@@ -18,7 +18,10 @@ Any sample statistic from a measurement or simulation, be it mean, variance or a
 The width of the confidence interval is proportional to SE. If we want to improve the quality of our estimate we should aim to reduce SE, and with that the width of the CI. Intuitively, we could take a larger sample from the population for a larger $$N$$
 
 # Effective samples
+As a non-statistician, most statistics deals with estimation of means, variances and other statistics from distributions that are assumed to be normal.
 Most statistics classes focus on populations and samples from these populations, with the latter typically assumed to be statistically independent. If that were fulfilled we could skip a lot of headache. In general, though, it is not; especially not in case of highly resolved CFD simulations. These results constitute time series, which are typically self-correlated to some degree. Correlated data points can be thought of as worth less than uncorrelated data points in a statistical sense, as they hold less information about the process.
+
+An effective number of samples $$N_{\mathrm{eff}}$$ can be derived, which allows us to propagate
 
 Consider the standard error of the sample mean, $$\sigma / \sqrt{N}$$. Using a very high $$N$$, this converges to very low values rather quickly. A low SE 
 
