@@ -19,16 +19,16 @@ The concept of standard error and can be extended to different estimators of sta
 
 
 The sample distribution will have a certain mean and standard deviation, which means we can define a confidence interval - a very useful construct in this case. 
-The width of the confidence interval is proportional to $$SE$$ or $$\sigma_e$$. If we want to improve the quality of our estimate we should aim to reduce SE, and with that the width of the CI. Intuitively, we could take a larger sample from the population for a larger $$N$$
+The width of the confidence interval is proportional to $$SE$$ or $$\sigma_e$$. If we want to improve the quality of our estimate we should aim to reduce SE, and with that the width of the CI. Intuitively, a larger sample size with higher $$N$$ leads to more accurate statistics.
 
 # Effective samples
-As a non-statistician, I tend to suppose that $$N$$ is the straight-up number of samples, which can be very large in the result data set of a highly resolved CFD simulation time series. This is good, right?
+However, when looking at results from a highly resolved CFD simulation, $$N$$ can become very large. If we talk about temporal sample sizes on the order of $$10^4$$ or $$10^5$$, the resulting high $$N$$ leads to extremely narrow confidence intervals.
 
-However, these results may be significantly autocorrelated. Using the number of temporal samples as $$N$$ amounts to assuming uncorrelated data, which is simply incorrect. Correlated data points can be thought of as being worth less than uncorrelated data points in a statistical sense, as they hold less new information about the process. In order to be able to use the definition of standard error above, we need to find a proper $$N$$. An effective number of samples $$N_{\mathrm{eff}}$$ can be derived, which characterizes autocorrelated processes by taking into account the interdependence between neighboring samples.
+The crux of the matter is that such results may be significantly autocorrelated. Using the number of temporal samples as $$N$$ amounts to assuming uncorrelated data, which is simply incorrect. Correlated data points can be thought of as being worth less than uncorrelated data points in a statistical sense, as they hold less new information about the process. In order to be able to use the definition of standard error above, we need to find a proper $$N$$. An effective number of samples $$N_{\mathrm{eff}}$$ can be derived, which characterizes autocorrelated processes by taking into account the interdependence between neighboring samples.
 
-Returning to the estimator of the mean, the variance $$\sigma^2 / N$$ quickly converges to very low values and excessively narrow confidence intervals.
-
+As an example, we look at a signal consisting of 13000 samples. Its mean is $$\mu=1.0522$$, its variance $$\sigma^2=0.001$$. Assuming $$N=13000$, we obtain a narrow distribution of the sample mean, i.e. the error variance of the mean is very low:
 <img src="../images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png" alt="Drawing" style="width: 400px;"/>
 <!--![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png =400x)-->
 
+The 
 
