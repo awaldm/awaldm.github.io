@@ -15,7 +15,7 @@ So, in terms of frequency resolution there is no such thing as a too long simula
 # Estimation of statistic accuracy
 Any sample statistic from a measurement or simulation, be it mean, variance or any higher order statistic, can be considered an estimate of a population statistic. The expected value for that statistic is usually unknown, since the entirety of the population is unknown. For instance, if we are interested in a mean we take a sample of size $$N$$ and compute its artithmetic average. No matter the distribution of the population, if we take many samples of size $$N$$ their means will be normally distributed. In order to quantify the reliability of that estimate we could compute the standard error of that estimate, which is $$SE = \sigma / \sqrt{N}$$. Here, $$\sigma$$ is the standard deviation of the population, or in the case of a simulation result, of the temporal signal. $$SE$$ is then the standard deviation of the **estimator of the population mean**.
 
-The concept of standard error and can be extended to different estimators of statistical moments. Note that most of the literature concerning this focuses on the variance of the estimator, which is simply $$\sigma_e = SE^2$$ in the case of the mean.
+The concept of standard error and can be extended to different estimators of statistical moments. Note that most of the literature concerning this focuses on the variance of the estimator, which is simply $$\sigma_e^2 = SE^2$$ in the case of the mean.
 
 
 The sample distribution will have a certain mean and standard deviation, which means we can define a confidence interval - a very useful construct in this case. 
@@ -26,7 +26,9 @@ As a non-statistician, I tend to suppose that $$N$$ is the straight-up number of
 
 However, these results may be significantly autocorrelated. Using the number of temporal samples as $$N$$ amounts to assuming uncorrelated data, which is simply incorrect. Correlated data points can be thought of as being worth less than uncorrelated data points in a statistical sense, as they hold less new information about the process. In order to be able to use the definition of standard error above, we need to find a proper $$N$$. An effective number of samples $$N_{\mathrm{eff}}$$ can be derived, which characterizes autocorrelated processes by taking into account the interdependence between neighboring samples.
 
-Consider the standard error of the sample mean, $$\sigma / \sqrt{N}$$. Using a very high $$N$$, this converges to very low values rather quickly.
+Returning to the estimator of the mean, the variance $$\sigma^2 / N$$ quickly converges to very low values and excessively narrow confidence intervals.
+
+. Using a very high $$N$$, this converges to very low values rather quickly.
 
 In time series, this is not necessarily the case - if you measure some kind of physical signal it often exhibits some kind of memory, in other words correlation.
 
