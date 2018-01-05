@@ -28,9 +28,6 @@ However, these results may be significantly autocorrelated. Using the number of 
 
 Returning to the estimator of the mean, the variance $$\sigma^2 / N$$ quickly converges to very low values and excessively narrow confidence intervals.
 
-. Using a very high $$N$$, this converges to very low values rather quickly.
+![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png)
 
-In time series, this is not necessarily the case - if you measure some kind of physical signal it often exhibits some kind of memory, in other words correlation.
-
-![_config.yml]({{ site.baseurl }}/images/config.png)
 
