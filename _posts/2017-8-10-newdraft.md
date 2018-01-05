@@ -28,6 +28,6 @@ However, these results may be significantly autocorrelated. Using the number of 
 
 Returning to the estimator of the mean, the variance $$\sigma^2 / N$$ quickly converges to very low values and excessively narrow confidence intervals.
 
-![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png)
+![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png =400x)
 
 
