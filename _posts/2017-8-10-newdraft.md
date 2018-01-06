@@ -26,9 +26,8 @@ However, when looking at results from a highly resolved CFD simulation, $$N$$ ca
 
 The crux of the matter is that such results may be significantly autocorrelated. Using the number of temporal samples as $$N$$ amounts to assuming uncorrelated data, which is simply incorrect. Correlated data points can be thought of as being worth less than uncorrelated data points in a statistical sense, as they hold less new information about the process. In order to be able to use the definition of standard error above, we need to find a proper $$N$$. An effective number of samples $$N_{\mathrm{eff}}$$ can be derived, which characterizes autocorrelated processes by taking into account the interdependence between neighboring samples.
 
-As an example, we look at a signal consisting of 13000 samples. Its mean is $$\mu=1.0522$$, its variance $$\sigma^2=0.001$$. Assuming $$N=13000$, we obtain a narrow distribution of the sample mean, i.e. the error variance of the mean is very low:
+As an example, we look at a signal consisting of 13500 samples. Its mean is $$\mu=1.0522$$, its variance $$\sigma^2=0.001$$. Assuming $$N=13500$$, we obtain a narrow distribution of the sample mean, i.e. the error variance of the mean is very low:
 <img src="../images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png" alt="Drawing" style="width: 400px;"/>
 <!--![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png =400x)-->
 
-The 
-
+We estimate the effective number of samples $$N_{\mathrm{eff}}$$ via the integral time scale of the process
