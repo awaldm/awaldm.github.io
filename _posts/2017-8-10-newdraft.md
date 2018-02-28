@@ -8,13 +8,13 @@ As someone who runs many large-ish unsteady flow simulations, I am often confron
 
 Common best practice advice ranges from "run 20, 30, 100 of some simple characteristic time unit" to "just make sure the signal mean stays within +- $$1\%$$ over the last couple time steps". Such methods may actually achieve satisfactory results when the time scales in question are selected appropriately. Still, generally we shoot for longer run times when in doubt.
 
-Usually, some form of spectral analysis is part of the postprocessing of the data that is acquired. For spectral analysis of temporal signals we have simple and handy criteria for the sampling rate and the signal length:
+Usually, some form of spectral analysis is part of the postprocessing of the acquired data. For spectral analysis of temporal signals we have simple and handy criteria for the sampling rate and the signal length:
 
 * What is the highest frequency we want to resolve? The Nyquist criterion sets the bounds here, simply stating that our sampling frequency $$f_s$$ should be at least twice the desired highest resolvable frequency
 
 * What is the lowest frequency we want to resolve? For an FFT-based analysis, the width of the frequency bins will be $$f_s/N$$, where $$N$$ is the number of samples. This also determines the lowest resolvable frequency.
 
-So, in terms of frequency resolution there is no such thing as a too long simulation run. Increasing the length becomes a rather expensive endeavor pretty quickly. There are lots of best practices and quite a few publications focusing on statistics convergence, but it is rather telling that so many of the latter focus on experimental data. So I was wondering: how accurate are statistics from my high-$$f_s$$, probably-too-short CFD simulations?
+Short, in terms of frequency resolution there is no such thing as a too long simulation run. However, increasing the length becomes a rather expensive endeavor pretty quickly. There are quite a few publications focusing on statistics convergence, but it is rather telling that so many of the latter focus on experimental data such as hotwire signals. So I went about asking myself: how accurate are the statistics from my high-$$f_s$$, probably-too-short CFD simulations?
 
 
 # Estimation of statistic accuracy
@@ -24,10 +24,10 @@ The concept of standard error and can be extended to different estimators of sta
 
 
 The sample distribution will have a certain mean and standard deviation, which means we can define a confidence interval - a very useful construct in this case. 
-The width of the confidence interval is proportional to $$SE$$ or $$\sigma_e$$. If we want to improve the quality of our estimate we should aim to reduce SE, and with that the width of the CI. Intuitively, a larger sample size with higher $$N$$ leads to more accurate statistics.
+The width of the confidence interval is proportional to $$\sigma_e$$ (or $$SE$$). If we want to improve the quality of our estimate we should aim to reduce SE, and with that the width of the CI. From this follows intuitively that a larger sample size with higher $$N$$ leads to more accurate statistics.
 
 # Effective samples
-However, when looking at results from a highly resolved CFD simulation, $$N$$ can become very large. If we talk about temporal sample sizes on the order of $$10^4$$ or $$10^5$$, the resulting high $$N$$ leads to extremely narrow confidence intervals.
+However, when looking at results from a highly resolved CFD simulation, $$N$$ can become very large. If we talk about temporal sample sizes on the order of $$10^4$$ or $$10^5$$, the resulting high $$N$$ leads to extremely narrow confidence intervals. Great for estimating statistics, right?
 
 The crux of the matter is that such results may be significantly autocorrelated. Using the number of temporal samples as $$N$$ amounts to assuming uncorrelated data, which is simply incorrect. Correlated data points can be thought of as being worth less than uncorrelated data points in a statistical sense, as they hold less new information about the process. In order to be able to use the definition of standard error above, we need to find a proper $$N$$. An effective number of samples $$N_{\mathrm{eff}}$$ can be derived, which characterizes autocorrelated processes by taking into account the interdependence between neighboring samples.
 
