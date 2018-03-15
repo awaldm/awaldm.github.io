@@ -4,9 +4,9 @@ title: Accuracy of statistics from CFD simulations
 draft: true
 ---
 {% include mathjax.html %}
-As someone who runs many large-ish unsteady flow simulations, I am often confronted with the question of statistical convergence and simulation runtime. How long do I need to run a complex turbulent simulation for? I typically want to infer something from the temporal statistics such as mean or variance, how realiable are those if I have simulated a certain physical time period?
+As someone who runs many large-ish unsteady aerodynamic flow simulations, I am often confronted with the question of statistical convergence and simulation runtime. How long do I need to run a complex turbulent simulation for in order to be able to trust the results? Since I typically want to infer something from the temporal statistics such as mean or variance; how reliable are those if I have simulated a certain physical time period?
 
-Common best practice advice ranges from "run 20, 30, 100 of some simple characteristic time unit" to "just make sure the signal mean stays within +- $$1\%$$ over the last couple time steps". Such methods may actually achieve satisfactory results when the time scales in question are selected appropriately. Still, generally we shoot for longer run times when in doubt.
+Common best practice advice ranges from "run 20, 30, 100 of some simple characteristic time unit" to "just make sure the signal mean stays within +- $$1\%$$ over the last couple time steps". Such methods may actually work well when the time scales in question are selected appropriately. Still, I wanted to understand these things a bit better.
 
 Usually, some form of spectral analysis is part of the postprocessing of the acquired data. For spectral analysis of temporal signals we have simple and handy criteria for the sampling rate and the signal length:
 
