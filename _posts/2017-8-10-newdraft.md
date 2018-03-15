@@ -33,7 +33,7 @@ The crux of the matter is that such results may be significantly autocorrelated.
 
 As an example, we look at a signal consisting of 13500 samples. Its mean is $$\mu=1.0522$$, its variance $$\sigma^2=0.001$$. Assuming $$N=13500$$, we obtain a narrow distribution of the sample mean, i.e. the error variance of the mean is very low:
 <!--<div style="text-align: center"><img src="../images/DDES_dt100_md_CL_monitor_SE_mean_uncorr.png" alt="Drawing" style="width: 300px;"/></div>-->
-![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_uncorr.png =400x)
+![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_uncorr.png){:class="img-responsive"}
 
 The confidence intervals indicated in the figure suggest this to be a pretty realiable estimate. This changes if when we take into account the correlation. It turns out that this signal has  an integral time scale of $$0.0057 s$$, which is equivalent to $$N_{\tau}=383$$ samples. The estimate of the effective number of samples $$N_{\mathrm{eff}}$$ is intuitive: we divide our total time by the time scale, or the original number of samples by $$N_{\tau}$$:
 
