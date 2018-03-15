@@ -41,7 +41,7 @@ $$N_{\mathrm{eff}} = N / N_{\tau}$$ = 80
 
 This is a quite significant reduction and the distribution of our signal mean estimate appears quite a bit wider:
 
-<img src="../images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png" alt="Drawing" style="width: 300px;"/>
+<div style="text-align: center"><img src="../images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png" alt="Drawing" style="width: 300px;"/></div>
 
 The effect of the autocorrelation is now included. Depending on the signal itself, a mean estimate with width this may or may not mean much. However, higher-order statistics are rather important in fluid dynamics. Reynolds stresses or power spectra represent nothing but second-order correlations. The effect of the effective sample size on those is represented by the variance estimate:
 
