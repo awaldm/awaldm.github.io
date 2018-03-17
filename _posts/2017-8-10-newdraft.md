@@ -33,19 +33,19 @@ The crux of the matter is that such results may be significantly autocorrelated.
 
 As an example, we look at a signal consisting of 13500 samples. Its mean is $$\mu=1.0522$$, its variance $$\sigma^2=0.001$$. Assuming $$N=13500$$, we obtain a narrow distribution of the sample mean, i.e. the error variance of the mean is very low:
 <!--<div style="text-align: center"><img src="../images/DDES_dt100_md_CL_monitor_SE_mean_uncorr.png" alt="Drawing" style="width: 300px;"/></div>-->
-![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_uncorr.png){:class="img-responsive"}
+![SE_mean_N]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_uncorr.png){:class="img-responsive"}
 
 The confidence intervals indicated in the figure suggest this to be a pretty realiable estimate. This changes if when we take into account the correlation. It turns out that this signal has  an integral time scale of $$0.0057 s$$, which is equivalent to $$N_{\tau}=383$$ samples. The estimate of the effective number of samples $$N_{\mathrm{eff}}$$ is intuitive: we divide our total time by the time scale, or the original number of samples by $$N_{\tau}$$:
 
 $$N_{\mathrm{eff}} = N / N_{\tau}$$ = 80
 
 This is a quite significant reduction and the distribution of our signal mean estimate appears quite a bit wider:
+![SE_mean_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png){:class="img-responsive"}
 
-<div style="text-align: center"><img src="../images/DDES_dt100_md_CL_monitor_SE_mean_Neff_vs_N.png" alt="Drawing" style="width: 300px;"/></div>
 
 The effect of the autocorrelation is now included. Depending on the signal itself, a mean estimate with width this may or may not mean much. However, higher-order statistics are rather important in fluid dynamics. Reynolds stresses or power spectra represent nothing but second-order correlations. The effect of the effective sample size on those is represented by the variance estimate:
+![SE_var_N_vs_Neff]({{ site.baseurl }}/images/DDES_dt100_md_CL_monitor_SE_var_Neff_vs_N.png){:class="img-responsive"}
 
-<div style="text-align: center"><img src="../images/DDES_dt100_md_CL_monitor_SE_var_Neff_vs_N.png" alt="Drawing" style="width: 300px;"/></div>
 
 In comparison, this is a rather devastating result. The reliability of the variance estimate takes a big and visible hit when $$N_{eff}$$ is used, which leads to the conclusion that we should not stop an unsteady simulation run too early. In fact, an error level can be defined for the definition of a necessary runtime.
 
