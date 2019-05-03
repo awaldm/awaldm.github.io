@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Accuracy of statistics from CFD simulations
-draft: true
+draft: false
 ---
 {% include mathjax.html %}
 As someone who runs many large-ish unsteady aerodynamic flow simulations, I am often confronted with the question of statistical convergence and simulation runtime. How long do I need to run a complex turbulent simulation for in order to be able to trust the results? Since I typically want to infer something from the temporal statistics such as mean or variance; how reliable are those if I have simulated a certain physical time period?
