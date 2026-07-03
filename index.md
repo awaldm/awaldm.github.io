@@ -4,9 +4,6 @@ title: about
 permalink: /
 subtitle: Computational scientist and technical leader working at the intersection of simulation, HPC, and machine learning.
 
-profile:
-  align: right
-
 news: false
 selected_papers: false
 social: true
@@ -21,5 +18,3 @@ My background includes a PhD in computational aerodynamics, postdoctoral researc
 - **CFD and simulation workflows**
 - **Machine learning for physical and geospatial systems**
 - **Technical solution design and customer-facing engineering**
-
-*This site is currently being refreshed.*
